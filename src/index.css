@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Alagard';
+  src: URL('/alagard.ttf') format('truetype');
+}
+
+* {
+  font-family: 'Alagard' !important;
+  letter-spacing: 1px !important;
+}
+
+/* body {
+  background-image: url('../public/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 50px;
+}

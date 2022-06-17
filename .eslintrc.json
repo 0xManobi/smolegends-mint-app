@@ -1,0 +1,84 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:security/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      // enable eslint-plugin-testing-library rules or preset only for matching files!
+      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    },
+    {
+      "files": ["**/*.ts?(x)"],
+      "parser": "@typescript-eslint/parser",
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript"
+      ]
+    }
+  ],
+  "rules": {
+    // for testing if eslint works properly,
+    // feel free to remove this if you do not need it
+//    "import/no-unused-modules": [1, {"unusedExports": true}],
+
+    "no-console": "off",
+    "jsx-a11y/media-has-caption": "off",
+    "import/no-anonymous-default-export": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/no-null": "off",
+    "security/detect-object-injection": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "no-case-declarations": "off",
+    "unicorn/catch-error-name": "off",
+    "unicorn/no-array-callback-reference": "off",
+    "unicorn/prefer-spread": "off",
+    "unicorn/prefer-string-slice": "off",
+    "sonarjs/cognitive-complexity": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "unicorn/no-new-array":"off",
+    "arrow-parens": ["warn", "always"],
+    "eqeqeq": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "tabWidth": 2,
+        "printWidth": 80,
+        "endOfLine": "auto",
+        "arrowParens": "always",
+        "trailingComma": "all",
+        "semi": true,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": true
+      }
+    ]
+  },
+  "plugins": ["simple-import-sort", "@typescript-eslint"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {}
+    },
+    "react": {
+      "version": "detect"
+    }
+  }
+}
